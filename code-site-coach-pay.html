@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- ============================================================
+       META
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Choisir mon programme – Maxime Lebrun Coach Sportif Vannes</title>
+  <meta name="description" content="Choisissez votre programme de coaching sportif à domicile à Vannes. Pack 10 séances ou abonnement mensuel. Paiement sécurisé par Stripe." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ================================================================
+       VARIABLES
+    ================================================================ */
+    :root {
+      --c-black:      #0A0A0A;
+      --c-dark:       #111111;
+      --c-dark2:      #1A1A1A;
+      --c-dark3:      #222222;
+      --c-dark4:      #2A2A2A;
+      --c-grey:       #888888;
+      --c-grey-lt:    #BBBBBB;
+      --c-white:      #FFFFFF;
+      --c-accent:     #FF5C00;
+      --c-accent2:    #FF8C00;
+      --c-accent-glow:rgba(255,92,0,.3);
+      --c-green:      #22C55E;
+      --c-green-bg:   rgba(34,197,94,.1);
+
+      --ff-display: 'Barlow Condensed', sans-serif;
+      --ff-body:    'DM Sans', sans-serif;
+      --radius-sm:  6px;
+      --radius-md:  14px;
+      --radius-lg:  24px;
+      --ease:       cubic-bezier(.4,0,.2,1);
+      --dur:        .3s;
+    }
+
+    /* ================================================================
+       RESET
+    ================================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--ff-body);
+      background: var(--c-black);
+      color: var(--c-white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    img { max-width: 100%; display: block; }
+    a   { color: inherit; text-decoration: none; }
+    ul  { list-style: none; }
+
+    /* ================================================================
+       UTILITIES
+    ================================================================ */
+    .container {
+      max-width: 1100px;
+      margin-inline: auto;
+      padding-inline: clamp(1.25rem, 5vw, 3rem);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--ff-display);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+    }
+    .tag::before {
+      content: '';
+      display: block;
+      width: 18px; height: 2px;
+      background: var(--c-accent);
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .65s var(--ease), transform .65s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .d1 { transition-delay: .1s; }
+    .d2 { transition-delay: .2s; }
+    .d3 { transition-delay: .3s; }
+    .d4 { transition-delay: .4s; }
+
+    /* ================================================================
+       NAVBAR MINI
+    ================================================================ */
+    #topbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      padding: 1rem 0;
+      background: rgba(10,10,10,.97);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,92,0,.12);
+    }
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .topbar-logo {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .topbar-logo span { color: var(--c-accent); }
+    .topbar-back {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--ff-display);
+      font-size: .82rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--c-grey);
+      transition: color var(--dur) var(--ease);
+    }
+    .topbar-back:hover { color: var(--c-accent); }
+    .topbar-secure {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .78rem;
+      color: var(--c-grey);
+    }
+    .topbar-secure svg { color: var(--c-green); }
+
+    /* ================================================================
+       HERO MINI
+    ================================================================ */
+    #hero {
+      padding-top: 7rem;
+      padding-bottom: 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 400px;
+      background: radial-gradient(ellipse, rgba(255,92,0,.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: rgba(255,92,0,.1);
+      border: 1px solid rgba(255,92,0,.25);
+      padding: .4rem 1.1rem;
+      border-radius: 50px;
+      font-family: var(--ff-display);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: var(--ff-display);
+      font-weight: 900;
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      line-height: .95;
+      text-transform: uppercase;
+      letter-spacing: -.02em;
+      margin-bottom: 1.2rem;
+    }
+    .hero-title span { color: var(--c-accent); }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--c-grey);
+      max-width: 52ch;
+      margin-inline: auto;
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+    /* Trust badges row */
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .82rem;
+      color: var(--c-grey-lt);
+    }
+    .trust-item svg { color: var(--c-green); flex-shrink: 0; }
+
+    /* ================================================================
+       OFFRE PRINCIPALE
+    ================================================================ */
+    #offres {
+      padding-block: clamp(3rem, 6vw, 5rem);
+    }
+
+    /* Toggle switch */
+    .toggle-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .toggle-label {
+      font-family: var(--ff-display);
+      font-size: .95rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--c-grey);
+      cursor: pointer;
+      transition: color var(--dur) var(--ease);
+    }
+    .toggle-label.active { color: var(--c-white); }
+    .toggle-switch {
+      position: relative;
+      width: 52px; height: 28px;
+      cursor: pointer;
+    }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .toggle-track {
+      position: absolute;
+      inset: 0;
+      background: var(--c-dark3);
+      border: 1.5px solid rgba(255,255,255,.1);
+      border-radius: 50px;
+      transition: background var(--dur) var(--ease);
+    }
+    .toggle-switch input:checked ~ .toggle-track { background: var(--c-accent); border-color: var(--c-accent); }
+    .toggle-thumb {
+      position: absolute;
+      top: 3px; left: 3px;
+      width: 20px; height: 20px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform var(--dur) var(--ease);
+      box-shadow: 0 2px 6px rgba(0,0,0,.3);
+    }
+    .toggle-switch input:checked ~ .toggle-track .toggle-thumb { transform: translateX(24px); }
+    .toggle-economy {
+      background: rgba(34,197,94,.15);
+      border: 1px solid rgba(34,197,94,.3);
+      color: var(--c-green);
+      padding: .2rem .7rem;
+      border-radius: 50px;
+      font-size: .72rem;
+      font-family: var(--ff-display);
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* Cards grid */
+    .offres-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    /* ── Card ── */
+    .offre-card {
+      background: var(--c-dark2);
+      border: 1.5px solid rgba(255,255,255,.07);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+      transition: border-color var(--dur) var(--ease),
+                  transform var(--dur) var(--ease),
+                  box-shadow var(--dur) var(--ease);
+    }
+    .offre-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 24px 64px rgba(0,0,0,.4);
+    }
+    .offre-card.featured {
+      border-color: var(--c-accent);
+      box-shadow: 0 0 0 1px var(--c-accent), 0 20px 60px rgba(255,92,0,.18);
+    }
+    .offre-card.featured:hover {
+      box-shadow: 0 0 0 1px var(--c-accent), 0 32px 80px rgba(255,92,0,.28);
+    }
+
+    /* Card top accent bar */
+    .card-bar {
+      height: 4px;
+      background: rgba(255,255,255,.06);
+    }
+    .offre-card.featured .card-bar {
+      background: linear-gradient(90deg, var(--c-accent), var(--c-accent2));
+    }
+
+    /* Popular badge */
+    .card-badge {
+      position: absolute;
+      top: 1.4rem; right: 1.4rem;
+      background: var(--c-accent);
+      color: #fff;
+      padding: .28rem .9rem;
+      border-radius: 50px;
+      font-family: var(--ff-display);
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .card-body { padding: 2.2rem 2rem; }
+
+    .card-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .card-name {
+      font-family: var(--ff-display);
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--c-grey);
+      margin-bottom: .5rem;
+    }
+    .card-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.6rem, 3vw, 2rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .card-title span { color: var(--c-accent); }
+
+    /* Price block */
+    .card-price-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: .3rem;
+      margin-bottom: .3rem;
+    }
+    .card-price {
+      font-family: var(--ff-display);
+      font-weight: 900;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      line-height: 1;
+      color: var(--c-white);
+    }
+    .offre-card.featured .card-price { color: var(--c-accent); }
+    .card-currency {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--c-grey);
+    }
+    .card-period {
+      font-size: .82rem;
+      color: var(--c-grey);
+      margin-bottom: 1.2rem;
+    }
+    .card-saving {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: var(--c-green-bg);
+      border: 1px solid rgba(34,197,94,.25);
+      color: var(--c-green);
+      padding: .3rem .8rem;
+      border-radius: 50px;
+      font-size: .75rem;
+      font-family: var(--ff-display);
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Divider */
+    .card-divider {
+      height: 1px;
+      background: rgba(255,255,255,.06);
+      margin-block: 1.5rem;
+    }
+
+    /* Features list */
+    .card-features {
+      display: flex;
+      flex-direction: column;
+      gap: .8rem;
+      margin-bottom: 1.8rem;
+    }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .8rem;
+    }
+    .feature-check {
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: rgba(34,197,94,.12);
+      border: 1px solid rgba(34,197,94,.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+    .feature-check svg { color: var(--c-green); }
+    .feature-item strong {
+      display: block;
+      font-size: .92rem;
+      font-weight: 500;
+      color: var(--c-white);
+      line-height: 1.3;
+    }
+    .feature-item span {
+      font-size: .78rem;
+      color: var(--c-grey);
+    }
+
+    /* Stripe button */
+    .stripe-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .7rem;
+      width: 100%;
+      padding: 1.1rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: all var(--dur) var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .stripe-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.1) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity var(--dur) var(--ease);
+    }
+    .stripe-btn:hover::before { opacity: 1; }
+    .stripe-btn-accent {
+      background: var(--c-accent);
+      color: #fff;
+    }
+    .stripe-btn-accent:hover {
+      background: var(--c-accent2);
+      box-shadow: 0 0 40px var(--c-accent-glow), 0 8px 32px rgba(255,92,0,.45);
+      transform: translateY(-2px);
+    }
+    .stripe-btn-outline {
+      background: transparent;
+      color: var(--c-white);
+      border: 1.5px solid rgba(255,255,255,.2);
+    }
+    .stripe-btn-outline:hover {
+      border-color: var(--c-accent);
+      color: var(--c-accent);
+      box-shadow: 0 0 24px var(--c-accent-glow);
+      transform: translateY(-2px);
+    }
+    .stripe-btn svg { transition: transform var(--dur) var(--ease); flex-shrink: 0; }
+    .stripe-btn:hover svg { transform: translateX(4px); }
+
+    /* Stripe secure note */
+    .stripe-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      margin-top: .9rem;
+      font-size: .74rem;
+      color: rgba(255,255,255,.25);
+    }
+    .stripe-note svg { color: rgba(255,255,255,.3); }
+
+    /* ================================================================
+       COMPARATIF
+    ================================================================ */
+    #comparatif {
+      padding-block: clamp(3rem, 6vw, 5rem);
+      background: var(--c-dark);
+    }
+    .comparatif-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .comparatif-title {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -.01em;
+    }
+    .comparatif-title span { color: var(--c-accent); }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .comp-table thead th {
+      padding: 1.1rem 1.4rem;
+      background: var(--c-dark3);
+      font-family: var(--ff-display);
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-align: center;
+      border-bottom: 2px solid rgba(255,255,255,.06);
+    }
+    .comp-table thead th:first-child { text-align: left; }
+    .comp-table thead th.col-featured {
+      background: rgba(255,92,0,.12);
+      color: var(--c-accent);
+      border-bottom-color: var(--c-accent);
+    }
+    .comp-table tbody tr {
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      transition: background var(--dur) var(--ease);
+    }
+    .comp-table tbody tr:hover { background: rgba(255,255,255,.02); }
+    .comp-table tbody td {
+      padding: 1rem 1.4rem;
+      font-size: .9rem;
+      color: var(--c-grey-lt);
+      text-align: center;
+    }
+    .comp-table tbody td:first-child {
+      text-align: left;
+      color: var(--c-white);
+      font-weight: 500;
+    }
+    .comp-table tbody td.col-featured { background: rgba(255,92,0,.05); }
+    .check-yes { color: var(--c-green); font-size: 1rem; }
+    .check-no  { color: rgba(255,255,255,.2); font-size: 1rem; }
+
+    /* ================================================================
+       GARANTIE
+    ================================================================ */
+    #garantie {
+      padding-block: clamp(3rem, 6vw, 5rem);
+    }
+    .garantie-wrap {
+      background: var(--c-dark2);
+      border: 1.5px solid rgba(255,92,0,.2);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 5vw, 4rem);
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .garantie-shield {
+      width: 100px; height: 100px;
+      flex-shrink: 0;
+      background: rgba(255,92,0,.08);
+      border: 2px solid rgba(255,92,0,.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+    }
+    .garantie-text h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      margin-bottom: .6rem;
+    }
+    .garantie-text h2 span { color: var(--c-accent); }
+    .garantie-text p { color: var(--c-grey); font-size: .95rem; line-height: 1.85; }
+
+    /* ================================================================
+       FAQ
+    ================================================================ */
+    #faq {
+      padding-block: clamp(3rem, 6vw, 5rem);
+      background: var(--c-dark);
+    }
+    .faq-header { text-align: center; margin-bottom: 2.5rem; }
+    .faq-header h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -.01em;
+    }
+    .faq-header h2 span { color: var(--c-accent); }
+    .faq-list { max-width: 720px; margin-inline: auto; display: flex; flex-direction: column; gap: .8rem; }
+    .faq-item {
+      background: var(--c-dark2);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      transition: border-color var(--dur) var(--ease);
+    }
+    .faq-item.open { border-color: rgba(255,92,0,.3); }
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 1.5rem;
+      cursor: pointer;
+      gap: 1rem;
+      user-select: none;
+    }
+    .faq-q span {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--c-white);
+    }
+    .faq-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(255,92,0,.1);
+      border: 1px solid rgba(255,92,0,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--c-accent);
+      font-size: 1.1rem;
+      font-weight: 700;
+      transition: transform var(--dur) var(--ease), background var(--dur) var(--ease);
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); background: rgba(255,92,0,.2); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s var(--ease);
+    }
+    .faq-item.open .faq-a { max-height: 300px; }
+    .faq-a-inner {
+      padding: 0 1.5rem 1.3rem;
+      font-size: .9rem;
+      color: var(--c-grey);
+      line-height: 1.85;
+    }
+
+    /* ================================================================
+       CTA BAS DE PAGE
+    ================================================================ */
+    #cta-bottom {
+      padding-block: clamp(4rem, 7vw, 6rem);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #cta-bottom::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 300px;
+      background: radial-gradient(ellipse, rgba(255,92,0,.09) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    #cta-bottom h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -.01em;
+      margin-bottom: 1rem;
+    }
+    #cta-bottom h2 span { color: var(--c-accent); }
+    #cta-bottom p { color: var(--c-grey); font-size: 1rem; margin-bottom: 2rem; }
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .btn-big {
+      display: inline-flex;
+      align-items: center;
+      gap: .7rem;
+      padding: 1.1rem 2.4rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: all var(--dur) var(--ease);
+    }
+    .btn-big-accent {
+      background: var(--c-accent);
+      color: #fff;
+    }
+    .btn-big-accent:hover {
+      background: var(--c-accent2);
+      box-shadow: 0 0 40px var(--c-accent-glow), 0 8px 32px rgba(255,92,0,.4);
+      transform: translateY(-2px);
+    }
+    .btn-big-ghost {
+      background: transparent;
+      color: var(--c-grey-lt);
+      border: 1.5px solid rgba(255,255,255,.15);
+    }
+    .btn-big-ghost:hover {
+      border-color: var(--c-accent);
+      color: var(--c-accent);
+      transform: translateY(-2px);
+    }
+
+    /* ================================================================
+       FOOTER MINI
+    ================================================================ */
+    #footer {
+      background: var(--c-dark2);
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding-block: 1.8rem;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-logo {
+      font-family: var(--ff-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .footer-logo span { color: var(--c-accent); }
+    .footer-links {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .footer-links a {
+      font-size: .78rem;
+      color: rgba(255,255,255,.3);
+      transition: color var(--dur) var(--ease);
+    }
+    .footer-links a:hover { color: var(--c-accent); }
+    .footer-stripe {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .75rem;
+      color: rgba(255,255,255,.25);
+    }
+    .footer-stripe svg { color: rgba(255,255,255,.3); }
+
+    /* ================================================================
+       RESPONSIVE
+    ================================================================ */
+    @media (max-width: 768px) {
+      .offres-grid { grid-template-columns: 1fr; }
+      .garantie-wrap { grid-template-columns: 1fr; text-align: center; }
+      .garantie-shield { margin-inline: auto; }
+      .topbar-back { display: none; }
+      .comp-table { font-size: .8rem; }
+      .comp-table tbody td,
+      .comp-table thead th { padding: .8rem .8rem; }
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2.4rem; }
+      .cta-actions { flex-direction: column; align-items: center; }
+      .footer-inner { flex-direction: column; align-items: center; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       TOPBAR
+  ============================================================ -->
+  <nav id="topbar" role="navigation" aria-label="Navigation">
+    <div class="container topbar-inner">
+      <a href="code-site-coach.html" class="topbar-back" aria-label="Retour au site">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        Retour
+      </a>
+
+      <a href="coach-vannes.html" class="topbar-logo" aria-label="Maxime Lebrun Coach">
+        ML<span>.</span>COACH
+      </a>
+
+      <div class="topbar-secure" aria-label="Paiement sécurisé">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Paiement sécurisé
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section id="hero">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="reveal">
+        <div class="hero-eyebrow">🔥 Choisissez votre programme</div>
+      </div>
+      <h1 class="hero-title reveal d1">
+        Investissez dans<br><span>votre transformation</span>
+      </h1>
+      <p class="hero-sub reveal d2">
+        Deux formules pensées pour s'adapter à vos objectifs et votre rythme de vie.
+        Coaching 100% à domicile à Vannes — résultats garantis.
+      </p>
+
+      <div class="trust-row reveal d3">
+        <div class="trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Sans engagement
+        </div>
+        <div class="trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Paiement 100% sécurisé
+        </div>
+        <div class="trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Séance d'essai offerte
+        </div>
+        <div class="trust-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+          Résultats dès 3 semaines
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OFFRES
+  ============================================================ -->
+  <section id="offres">
+    <div class="container">
+
+      <div class="offres-grid">
+
+        <!-- ── CARD 1 : Pack 10 séances ── -->
+        <div class="offre-card featured reveal d1">
+          <div class="card-bar"></div>
+          <div class="card-badge">⭐ Meilleure valeur</div>
+
+          <div class="card-body">
+            <span class="card-icon" aria-hidden="true">🏆</span>
+            <p class="card-name">Formule intensive</p>
+            <h2 class="card-title">Pack <span>10 séances</span></h2>
+
+            <div class="card-price-wrap">
+              <span class="card-currency">€</span>
+              <span class="card-price">550</span>
+            </div>
+            <p class="card-period">paiement unique · soit <strong style="color:#fff;">55€/séance</strong></p>
+            <div class="card-saving">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Vous économisez 100€ vs séances uniques
+            </div>
+
+            <div class="card-divider"></div>
+
+            <ul class="card-features" role="list">
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>10 séances de 60 minutes</strong>
+                  <span>À utiliser en 3 mois maximum</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>Déplacement à domicile inclus</strong>
+                  <span>Vannes et 20 km alentours</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>Bilan initial complet</strong>
+                  <span>Composition corporelle + objectifs</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>Programme 100% personnalisé</strong>
+                  <span>Adapté à votre niveau et vos objectifs</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>Suivi nutrition offert</strong>
+                  <span>Plan alimentaire sur mesure inclus</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>Groupe WhatsApp privé</strong>
+                  <span>Accès direct à Maxime entre les séances</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>Matériel fourni</strong>
+                  <span>Tout l'équipement apporté à domicile</span>
+                </div>
+              </li>
+            </ul>
+
+            <!--
+              BOUTON STRIPE – PACK 10 SÉANCES
+              Remplacez VOTRE_LIEN_STRIPE_PACK10 par votre lien de paiement Stripe.
+              Exemple : https://buy.stripe.com/xxxxxxxxxxxxx
+            -->
+            <a
+              href="https://buy.stripe.com/test_bJe3cxb16dCy6wr8QJ3Nm00"
+              class="stripe-btn stripe-btn-accent"
+              role="button"
+              aria-label="Commander le Pack 10 séances pour 550€ via Stripe"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              Commander – 550€
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+
+            <div class="stripe-note">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Paiement sécurisé par Stripe · CB, Visa, Mastercard, Apple Pay
+            </div>
+          </div>
+        </div>
+
+        <!-- ── CARD 2 : Abonnement mensuel ── -->
+        <div class="offre-card reveal d2">
+          <div class="card-bar"></div>
+
+          <div class="card-body">
+            <span class="card-icon" aria-hidden="true">♾️</span>
+            <p class="card-name">Formule régulière</p>
+            <h2 class="card-title">Abonnement <span>mensuel</span></h2>
+
+            <div class="card-price-wrap">
+              <span class="card-currency">€</span>
+              <span class="card-price">199</span>
+            </div>
+            <p class="card-period">par mois · <strong style="color:#fff;">4 séances</strong> incluses</p>
+            <div class="card-saving">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Sans engagement · Résiliable à tout moment
+            </div>
+
+            <div class="card-divider"></div>
+
+            <ul class="card-features" role="list">
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>4 séances de 60 min / mois</strong>
+                  <span>Soit 1 séance par semaine</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>Déplacement à domicile inclus</strong>
+                  <span>Vannes et 20 km alentours</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>Programme évolutif mensuel</strong>
+                  <span>Reprogrammation chaque mois selon vos progrès</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>Suivi nutrition complet</strong>
+                  <span>Plan alimentaire mis à jour mensuellement</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>Disponibilité 7j/7 par message</strong>
+                  <span>Questions, conseils, motivation à la demande</span>
+                </div>
+              </li>
+              <li class="feature-item">
+                <div class="feature-check" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <div>
+                  <strong>Bilan mensuel des progrès</strong>
+                  <span>Mesures et ajustements à chaque bilan</span>
+                </div>
+              </li>
+            </ul>
+
+            <!--
+              BOUTON STRIPE – ABONNEMENT MENSUEL
+              Remplacez VOTRE_LIEN_STRIPE_ABONNEMENT par votre lien de paiement Stripe.
+              Pour un abonnement récurrent, créez un Payment Link avec récurrence dans Stripe Dashboard.
+              Exemple : https://buy.stripe.com/xxxxxxxxxxxxx
+            -->
+            <a
+              href="https://buy.stripe.com/test_3cIdRbedi41Y5sn0kd3Nm01"
+              class="stripe-btn stripe-btn-outline"
+              role="button"
+              aria-label="Souscrire à l'abonnement mensuel à 199€ via Stripe"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+              S'abonner – 199€/mois
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+
+            <div class="stripe-note">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Paiement sécurisé par Stripe · Résiliable en 1 clic
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TABLEAU COMPARATIF
+  ============================================================ -->
+  <section id="comparatif">
+    <div class="container">
+      <div class="comparatif-header reveal">
+        <span class="tag" style="justify-content:center;margin-bottom:.8rem;">Comparer les formules</span>
+        <h2 class="comparatif-title">Ce qui est <span>inclus</span></h2>
+      </div>
+
+      <div style="overflow-x:auto;" class="reveal d1">
+        <table class="comp-table" aria-label="Comparatif des formules de coaching">
+          <thead>
+            <tr>
+              <th scope="col">Inclus dans la formule</th>
+              <th scope="col" class="col-featured">Pack 10 séances<br><small style="font-size:.7rem;opacity:.7;">550€ · paiement unique</small></th>
+              <th scope="col">Abonnement mensuel<br><small style="font-size:.7rem;opacity:.7;">199€/mois</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Séances de coaching à domicile</td>
+              <td class="col-featured"><strong style="color:#fff;">10 séances</strong></td>
+              <td><strong style="color:#fff;">4/mois</strong></td>
+            </tr>
+            <tr>
+              <td>Déplacement inclus (Vannes &amp; 20 km)</td>
+              <td class="col-featured"><span class="check-yes">✓</span></td>
+              <td><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Bilan initial complet</td>
+              <td class="col-featured"><span class="check-yes">✓</span></td>
+              <td><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Programme personnalisé</td>
+              <td class="col-featured"><span class="check-yes">✓</span></td>
+              <td><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Suivi nutrition inclus</td>
+              <td class="col-featured"><span class="check-yes">✓</span></td>
+              <td><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Matériel apporté à domicile</td>
+              <td class="col-featured"><span class="check-yes">✓</span></td>
+              <td><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Groupe WhatsApp privé</td>
+              <td class="col-featured"><span class="check-yes">✓</span></td>
+              <td><span class="check-no">–</span></td>
+            </tr>
+            <tr>
+              <td>Disponibilité 7j/7 par message</td>
+              <td class="col-featured"><span class="check-no">–</span></td>
+              <td><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Reprogrammation mensuelle</td>
+              <td class="col-featured"><span class="check-no">–</span></td>
+              <td><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Bilan mensuel des progrès</td>
+              <td class="col-featured"><span class="check-no">–</span></td>
+              <td><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td>Sans engagement</td>
+              <td class="col-featured"><span class="check-yes">✓</span></td>
+              <td><span class="check-yes">✓</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:700;color:#fff;">Prix par séance</td>
+              <td class="col-featured" style="color:var(--c-accent);font-weight:700;">55€</td>
+              <td style="font-weight:700;color:#fff;">~50€</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GARANTIE
+  ============================================================ -->
+  <section id="garantie">
+    <div class="container">
+      <div class="garantie-wrap reveal">
+        <div class="garantie-shield" aria-hidden="true">🛡️</div>
+        <div class="garantie-text">
+          <h2>Satisfait ou <span>remboursé</span></h2>
+          <p>
+            Si après votre première séance payante vous n'êtes pas entièrement satisfait,
+            je vous rembourse intégralement — sans question, sans délai.
+            Je m'engage sur la qualité de mon coaching et sur votre expérience.
+            C'est ma promesse personnelle en tant que coach professionnel à Vannes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQ
+  ============================================================ -->
+  <section id="faq">
+    <div class="container">
+      <div class="faq-header reveal">
+        <span class="tag" style="justify-content:center;margin-bottom:.8rem;">Questions fréquentes</span>
+        <h2><span>FAQ</span></h2>
+      </div>
+
+      <ul class="faq-list reveal d1" role="list">
+
+        <li class="faq-item" role="listitem">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <span>Comment fonctionne le paiement Stripe ?</span>
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a">
+            <p class="faq-a-inner">
+              En cliquant sur le bouton de commande, vous êtes redirigé vers une page de paiement Stripe — la solution de paiement en ligne la plus sécurisée au monde. Vous pouvez payer par carte bancaire (Visa, Mastercard), Apple Pay ou Google Pay. Vos données bancaires ne sont jamais transmises à Maxime Lebrun.
+            </p>
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <span>Puis-je résilier l'abonnement à tout moment ?</span>
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a">
+            <p class="faq-a-inner">
+              Oui, l'abonnement mensuel est sans engagement. Vous pouvez le résilier à tout moment depuis votre espace Stripe ou en m'envoyant simplement un message. La résiliation prend effet à la fin du mois en cours, sans frais supplémentaires.
+            </p>
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <span>Que se passe-t-il après mon paiement ?</span>
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a">
+            <p class="faq-a-inner">
+              Dès réception de votre paiement, vous recevez un email de confirmation. Je vous contacte ensuite personnellement sous 24h pour fixer votre première séance, réaliser votre bilan initial et commencer à construire votre programme sur mesure.
+            </p>
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <span>Le pack 10 séances est-il valable combien de temps ?</span>
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a">
+            <p class="faq-a-inner">
+              Le pack 10 séances est valable 3 mois à partir de la date d'achat. Vous pouvez les utiliser à votre rythme sur cette période, en fonction de vos disponibilités. Une fois le pack activé, les séances non utilisées ne sont pas remboursables, mais peuvent être reportées sur justificatif.
+            </p>
+          </div>
+        </li>
+
+        <li class="faq-item" role="listitem">
+          <div class="faq-q" tabindex="0" role="button" aria-expanded="false">
+            <span>Êtes-vous disponible le week-end à Vannes ?</span>
+            <div class="faq-icon" aria-hidden="true">+</div>
+          </div>
+          <div class="faq-a">
+            <p class="faq-a-inner">
+              Oui ! Je suis disponible du lundi au vendredi de 7h à 21h et le samedi de 8h à 18h. Les séances du dimanche sont possibles sur demande pour les abonnés. Mes créneaux sont très demandés — je vous conseille de réserver rapidement après votre commande.
+            </p>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CTA BAS DE PAGE
+  ============================================================ -->
+  <section id="cta-bottom">
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="reveal">
+        <h2>Prêt à <span>vous transformer</span> ?</h2>
+        <p>Choisissez votre formule et commencez votre transformation dès cette semaine à Vannes.</p>
+        <div class="cta-actions">
+          <a href="#offres" class="btn-big btn-big-accent">
+            🔥 Choisir ma formule
+          </a>
+          <a href="coach-vannes.html#contact" class="btn-big btn-big-ghost">
+            Questions ? Contactez-moi
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER MINI
+  ============================================================ -->
+  <footer id="footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-logo">ML<span>.</span>COACH</div>
+      <div class="footer-links">
+        <a href="coach-vannes.html">Accueil</a>
+        <a href="coach-vannes.html#contact">Contact</a>
+        <a href="#">Mentions légales</a>
+        <a href="#">CGU</a>
+      </div>
+      <div class="footer-stripe">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        Paiements sécurisés par Stripe
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    /* ── Scroll reveal ── */
+    const revealEls = document.querySelectorAll('.reveal');
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          ro.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    revealEls.forEach(el => ro.observe(el));
+
+    /* Trigger hero immediately */
+    document.querySelectorAll('#hero .reveal').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 150 + i * 100);
+    });
+
+    /* ── FAQ accordion ── */
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        // Toggle current
+        if (!isOpen) {
+          item.classList.add('open');
+          q.setAttribute('aria-expanded', 'true');
+        }
+      });
+      // Keyboard support
+      q.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); q.click(); }
+      });
+    });
+  </script>
+
+</body>
+</html>
