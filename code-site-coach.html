@@ -1,0 +1,2154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- ============================================================
+       META SEO
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Maxime Lebrun – Coach Sportif à Domicile à Vannes | Personal Trainer Morbihan</title>
+  <meta name="description" content="Maxime Lebrun, coach sportif à domicile à Vannes (56). Perte de poids, prise de masse, remise en forme. Personal trainer certifié. Réservez votre séance d'essai gratuite." />
+  <meta name="keywords" content="coach sportif Vannes, coach sportif à domicile Vannes, remise en forme Vannes, personal trainer Vannes, coaching sportif Morbihan, perte de poids Vannes" />
+  <meta name="author" content="Maxime Lebrun Coach Sportif" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://maxime-lebrun-coach.fr/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Maxime Lebrun – Coach Sportif à Domicile Vannes" />
+  <meta property="og:description" content="Transformez votre corps avec un coach sportif certifié à Vannes. Séances à domicile, programmes sur mesure." />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Maxime Lebrun – Coach Sportif Vannes",
+    "@type": "SportsActivityLocation",
+    "description": "Coach sportif à domicile à Vannes, Morbihan. Personal trainer certifié.",
+    "url": "https://maxime-lebrun-coach.fr/",
+    "telephone": "+33-6-12-34-56-78",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Vannes",
+      "postalCode": "56000",
+      "addressCountry": "FR"
+    },
+    "priceRange": "€€"
+  }
+  </script>
+
+  <!-- Google Fonts: Barlow Condensed (display) + DM Sans (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700;1,800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ================================================================
+       CSS VARIABLES
+    ================================================================ */
+    :root {
+      --c-black:    #0A0A0A;
+      --c-dark:     #111111;
+      --c-dark2:    #1A1A1A;
+      --c-dark3:    #222222;
+      --c-grey:     #888888;
+      --c-grey-lt:  #BBBBBB;
+      --c-white:    #FFFFFF;
+      --c-off-white:#F5F5F3;
+      --c-accent:   #FF5C00;
+      --c-accent2:  #FF8C00;
+      --c-accent-glow: rgba(255,92,0,.35);
+
+      --ff-display: 'Barlow Condensed', sans-serif;
+      --ff-body:    'DM Sans', sans-serif;
+
+      --radius-sm:  6px;
+      --radius-md:  12px;
+      --radius-lg:  24px;
+      --ease:       cubic-bezier(.4,0,.2,1);
+      --dur:        .3s;
+    }
+
+    /* ================================================================
+       RESET & BASE
+    ================================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--ff-body);
+      background: var(--c-black);
+      color: var(--c-white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a  { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button, input, textarea, select { font-family: inherit; }
+
+    /* ================================================================
+       UTILITIES
+    ================================================================ */
+    .container {
+      max-width: 1200px;
+      margin-inline: auto;
+      padding-inline: clamp(1.25rem, 5vw, 3rem);
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-family: var(--ff-display);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 1rem;
+    }
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 20px; height: 2px;
+      background: var(--c-accent);
+    }
+
+    .section-title {
+      font-family: var(--ff-display);
+      font-weight: 800;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.0;
+      text-transform: uppercase;
+      letter-spacing: -.01em;
+    }
+    .section-title span { color: var(--c-accent); }
+
+    .section-lead {
+      font-size: 1rem;
+      color: var(--c-grey);
+      max-width: 52ch;
+      margin-top: .8rem;
+      line-height: 1.8;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .9rem 2rem;
+      border-radius: 4px;
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: all var(--dur) var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,.08);
+      opacity: 0;
+      transition: opacity var(--dur) var(--ease);
+    }
+    .btn:hover::after { opacity: 1; }
+
+    .btn-accent {
+      background: var(--c-accent);
+      color: #fff;
+    }
+    .btn-accent:hover {
+      background: var(--c-accent2);
+      box-shadow: 0 0 30px var(--c-accent-glow), 0 8px 24px rgba(255,92,0,.4);
+      transform: translateY(-2px) scale(1.02);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--c-white);
+      border: 1.5px solid rgba(255,255,255,.3);
+    }
+    .btn-outline:hover {
+      border-color: var(--c-accent);
+      color: var(--c-accent);
+      box-shadow: 0 0 20px var(--c-accent-glow);
+      transform: translateY(-2px);
+    }
+    .btn svg { transition: transform var(--dur) var(--ease); }
+    .btn:hover svg { transform: translateX(4px); }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left  { opacity: 0; transform: translateX(-40px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .reveal-right { opacity: 0; transform: translateX(40px);  transition: opacity .7s var(--ease), transform .7s var(--ease); }
+    .reveal-left.visible,
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .d1 { transition-delay: .1s; }
+    .d2 { transition-delay: .2s; }
+    .d3 { transition-delay: .3s; }
+    .d4 { transition-delay: .4s; }
+    .d5 { transition-delay: .5s; }
+
+    /* Orange line separator */
+    .accent-line {
+      display: block;
+      width: 56px; height: 3px;
+      background: linear-gradient(90deg, var(--c-accent), var(--c-accent2));
+      border-radius: 2px;
+      margin-block: 1.2rem;
+    }
+
+    /* ================================================================
+       NAVBAR
+    ================================================================ */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      padding: 1.4rem 0;
+      transition: background var(--dur) var(--ease),
+                  padding var(--dur) var(--ease),
+                  box-shadow var(--dur) var(--ease);
+    }
+    #navbar.scrolled {
+      background: rgba(10,10,10,.97);
+      backdrop-filter: blur(16px);
+      padding: .9rem 0;
+      box-shadow: 0 2px 24px rgba(0,0,0,.5);
+      border-bottom: 1px solid rgba(255,92,0,.15);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--ff-display);
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+    .nav-logo span { color: var(--c-accent); }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .nav-links a {
+      font-family: var(--ff-display);
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--c-grey-lt);
+      position: relative;
+      transition: color var(--dur) var(--ease);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--c-accent);
+      transition: width var(--dur) var(--ease);
+    }
+    .nav-links a:hover { color: var(--c-white); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      padding: .55rem 1.4rem !important;
+      background: var(--c-accent) !important;
+      color: #fff !important;
+      border-radius: 4px;
+      font-size: .82rem !important;
+      transition: box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease) !important;
+    }
+    .nav-cta:hover {
+      box-shadow: 0 0 20px var(--c-accent-glow) !important;
+      transform: translateY(-1px) !important;
+    }
+    .nav-cta::after { display: none !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: .4rem;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px; height: 2px;
+      background: var(--c-white);
+      transition: all var(--dur) var(--ease);
+    }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4px,5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; width: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4px,-5px); }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--c-dark2);
+      border-top: 1px solid rgba(255,92,0,.2);
+      position: absolute;
+      top: 100%; left: 0; right: 0;
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      padding: 1rem 2rem;
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--c-grey-lt);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      transition: color var(--dur) var(--ease), background var(--dur) var(--ease);
+    }
+    .mobile-nav a:hover { color: var(--c-accent); background: rgba(255,92,0,.05); }
+
+    /* ================================================================
+       HERO
+    ================================================================ */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1800&auto=format&fit=crop&q=85') center/cover no-repeat;
+    }
+    /* Parallax handled by JS */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        105deg,
+        rgba(5,5,5,.92) 0%,
+        rgba(10,10,10,.75) 55%,
+        rgba(10,10,10,.3) 100%
+      );
+    }
+    /* Diagonal accent stripe */
+    .hero-stripe {
+      position: absolute;
+      bottom: 0; right: 0;
+      width: 45%;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 60%, rgba(255,92,0,.06) 100%);
+      pointer-events: none;
+    }
+    /* Animated noise texture overlay */
+    .hero-noise {
+      position: absolute;
+      inset: 0;
+      opacity: .03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding-block: 9rem 5rem;
+      max-width: 780px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: rgba(255,92,0,.15);
+      border: 1px solid rgba(255,92,0,.3);
+      padding: .45rem 1rem;
+      border-radius: 50px;
+      font-family: var(--ff-display);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+      margin-bottom: 1.8rem;
+    }
+    .hero-badge::before {
+      content: '';
+      display: block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { opacity: 1; transform: scale(1); }
+      50%      { opacity: .4; transform: scale(.7); }
+    }
+
+    .hero-title {
+      font-family: var(--ff-display);
+      font-weight: 900;
+      font-size: clamp(3.2rem, 8vw, 7rem);
+      line-height: .95;
+      text-transform: uppercase;
+      letter-spacing: -.02em;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title .line2 { color: var(--c-accent); display: block; }
+    .hero-title .line3 {
+      display: block;
+      -webkit-text-stroke: 1px rgba(255,255,255,.35);
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 1.5vw, 1.15rem);
+      color: rgba(255,255,255,.65);
+      max-width: 46ch;
+      margin-bottom: 2.5rem;
+      line-height: 1.85;
+      font-weight: 300;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 3.5rem;
+    }
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+    .hero-stat strong {
+      display: block;
+      font-family: var(--ff-display);
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--c-accent);
+      line-height: 1;
+    }
+    .hero-stat span {
+      font-size: .78rem;
+      color: var(--c-grey);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* Scroll indicator */
+    .scroll-down {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .5rem;
+      color: rgba(255,255,255,.3);
+      font-family: var(--ff-display);
+      font-size: .65rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      animation: scrollBounce 2.5s infinite;
+    }
+    .scroll-down-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, rgba(255,92,0,.8), transparent);
+    }
+    @keyframes scrollBounce {
+      0%,100% { transform: translateX(-50%) translateY(0); }
+      50%      { transform: translateX(-50%) translateY(8px); }
+    }
+
+    /* ================================================================
+       ABOUT / COACH
+    ================================================================ */
+    #about {
+      padding-block: clamp(5rem, 9vw, 8rem);
+      background: var(--c-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #about::before {
+      content: 'COACH';
+      position: absolute;
+      right: -2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--ff-display);
+      font-size: clamp(8rem, 18vw, 18rem);
+      font-weight: 900;
+      color: rgba(255,255,255,.02);
+      pointer-events: none;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+    }
+    .about-img {
+      width: 100%;
+      aspect-ratio: 3/4;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      filter: grayscale(20%);
+      transition: filter .5s var(--ease);
+    }
+    .about-img:hover { filter: grayscale(0%); }
+    .about-img-frame {
+      position: absolute;
+      top: -12px; left: -12px;
+      right: 12px; bottom: -12px;
+      border: 2px solid rgba(255,92,0,.3);
+      border-radius: var(--radius-md);
+      pointer-events: none;
+    }
+    .about-cert {
+      position: absolute;
+      bottom: 2rem;
+      right: -1.5rem;
+      background: var(--c-accent);
+      color: #fff;
+      padding: 1rem 1.2rem;
+      border-radius: var(--radius-md);
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(255,92,0,.5);
+    }
+    .about-cert strong {
+      display: block;
+      font-family: var(--ff-display);
+      font-size: 2rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+    .about-cert span { font-size: .7rem; letter-spacing: .1em; opacity: .85; text-transform: uppercase; }
+
+    .about-text p { color: var(--c-grey); margin-top: .9rem; line-height: 1.85; font-size: .97rem; }
+    .about-name {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+      margin-top: .4rem;
+    }
+    .about-name span { color: var(--c-accent); }
+    .about-title {
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--c-grey);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-top: .2rem;
+    }
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6rem;
+      margin-top: 1.4rem;
+    }
+    .tag {
+      padding: .35rem .9rem;
+      border: 1px solid rgba(255,92,0,.3);
+      border-radius: 50px;
+      font-size: .78rem;
+      font-family: var(--ff-display);
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--c-accent);
+    }
+
+    /* ================================================================
+       SERVICES
+    ================================================================ */
+    #services {
+      padding-block: clamp(5rem, 9vw, 8rem);
+      background: var(--c-black);
+    }
+    .services-header { margin-bottom: 3.5rem; }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%,280px),1fr));
+      gap: 1px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+    .service-card {
+      background: var(--c-dark);
+      padding: 2.2rem 2rem;
+      position: relative;
+      overflow: hidden;
+      transition: background var(--dur) var(--ease);
+      cursor: default;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--c-accent), var(--c-accent2));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s var(--ease);
+    }
+    .service-card:hover { background: var(--c-dark2); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-num {
+      font-family: var(--ff-display);
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(255,255,255,.04);
+      position: absolute;
+      top: .8rem; right: 1.2rem;
+      line-height: 1;
+      transition: color var(--dur) var(--ease);
+    }
+    .service-card:hover .service-num { color: rgba(255,92,0,.08); }
+    .service-icon-wrap {
+      width: 52px; height: 52px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,92,0,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.3rem;
+      transition: background var(--dur) var(--ease);
+    }
+    .service-card:hover .service-icon-wrap { background: rgba(255,92,0,.22); }
+    .service-icon-wrap svg { color: var(--c-accent); }
+    .service-card h3 {
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: .6rem;
+    }
+    .service-card p { font-size: .88rem; color: var(--c-grey); line-height: 1.75; }
+
+    /* ================================================================
+       AVANT / APRÈS SLIDER
+    ================================================================ */
+    #avant-apres {
+      padding-block: clamp(5rem, 9vw, 8rem);
+      background: var(--c-dark);
+    }
+    .ba-header { text-align: center; margin-bottom: 3rem; }
+    .ba-header .section-lead { margin-inline: auto; }
+
+    .ba-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%,340px),1fr));
+      gap: 1.5rem;
+    }
+    .ba-card {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+      background: var(--c-dark2);
+    }
+    .ba-slider-wrap {
+      position: relative;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+      user-select: none;
+    }
+    .ba-img-after,
+    .ba-img-before {
+      position: absolute;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+    .ba-img-before { z-index: 2; clip-path: inset(0 50% 0 0); }
+    .ba-divider {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 3px;
+      background: var(--c-accent);
+      z-index: 3;
+      cursor: ew-resize;
+      transform: translateX(-50%);
+    }
+    .ba-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--c-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 20px rgba(255,92,0,.6);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: ew-resize;
+    }
+    .ba-labels {
+      position: absolute;
+      bottom: 1rem;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 1rem;
+      z-index: 4;
+      pointer-events: none;
+    }
+    .ba-label {
+      background: rgba(0,0,0,.7);
+      color: #fff;
+      padding: .3rem .8rem;
+      border-radius: 50px;
+      font-family: var(--ff-display);
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .ba-label.after { color: var(--c-accent); }
+    .ba-info {
+      padding: 1.2rem 1.4rem;
+    }
+    .ba-info h3 {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .ba-info p { font-size: .82rem; color: var(--c-grey); margin-top: .3rem; }
+
+    /* ================================================================
+       TESTIMONIALS
+    ================================================================ */
+    #temoignages {
+      padding-block: clamp(5rem, 9vw, 8rem);
+      background: var(--c-black);
+    }
+    .testi-header { margin-bottom: 3rem; }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%,320px),1fr));
+      gap: 1.5rem;
+    }
+    .testi-card {
+      background: var(--c-dark);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      position: relative;
+      transition: border-color var(--dur) var(--ease),
+                  transform var(--dur) var(--ease),
+                  box-shadow var(--dur) var(--ease);
+    }
+    .testi-card:hover {
+      border-color: rgba(255,92,0,.3);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(255,92,0,.1);
+    }
+    .testi-quote {
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--c-accent);
+      opacity: .4;
+      font-family: Georgia, serif;
+      margin-bottom: .5rem;
+    }
+    .testi-text {
+      font-size: .92rem;
+      color: var(--c-grey-lt);
+      line-height: 1.8;
+      font-style: italic;
+      margin-bottom: 1.4rem;
+    }
+    .testi-stars {
+      color: var(--c-accent);
+      font-size: .9rem;
+      letter-spacing: .1rem;
+      margin-bottom: .8rem;
+    }
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: .9rem;
+    }
+    .testi-avatar {
+      width: 46px; height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid rgba(255,92,0,.3);
+    }
+    .testi-author-info strong {
+      display: block;
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+    .testi-author-info span { font-size: .78rem; color: var(--c-grey); }
+    .testi-result {
+      position: absolute;
+      top: 1.2rem; right: 1.4rem;
+      background: rgba(255,92,0,.12);
+      color: var(--c-accent);
+      border: 1px solid rgba(255,92,0,.2);
+      padding: .25rem .7rem;
+      border-radius: 50px;
+      font-family: var(--ff-display);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    /* ================================================================
+       CAROUSEL
+    ================================================================ */
+    #galerie {
+      padding-block: clamp(4rem, 7vw, 6rem);
+      background: var(--c-dark2);
+      overflow: hidden;
+    }
+    .carousel-header { margin-bottom: 2rem; }
+    .carousel-track-wrap {
+      overflow: hidden;
+      position: relative;
+      mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(90deg, transparent, black 8%, black 92%, transparent);
+    }
+    .carousel-track {
+      display: flex;
+      gap: 1rem;
+      width: max-content;
+      animation: carouselScroll 28s linear infinite;
+    }
+    .carousel-track:hover { animation-play-state: paused; }
+    @keyframes carouselScroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .carousel-item {
+      width: clamp(220px, 25vw, 300px);
+      aspect-ratio: 3/4;
+      flex-shrink: 0;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .6s var(--ease);
+    }
+    .carousel-item:hover img { transform: scale(1.07); }
+    .carousel-item-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.6) 0%, transparent 50%);
+    }
+
+    /* ================================================================
+       TARIFS
+    ================================================================ */
+    #tarifs {
+      padding-block: clamp(5rem, 9vw, 8rem);
+      background: var(--c-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #tarifs::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,92,0,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .tarifs-header { text-align: center; margin-bottom: 3.5rem; }
+    .tarifs-header .section-lead { margin-inline: auto; }
+    .tarifs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%,300px),1fr));
+      gap: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .tarif-card {
+      background: var(--c-dark2);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--radius-md);
+      padding: 2.4rem 2rem;
+      text-align: center;
+      position: relative;
+      transition: transform var(--dur) var(--ease),
+                  border-color var(--dur) var(--ease),
+                  box-shadow var(--dur) var(--ease);
+    }
+    .tarif-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,92,0,.4);
+      box-shadow: 0 20px 60px rgba(255,92,0,.12);
+    }
+    .tarif-card.featured {
+      border-color: var(--c-accent);
+      background: linear-gradient(160deg, #1e0d00 0%, var(--c-dark2) 60%);
+      box-shadow: 0 8px 48px rgba(255,92,0,.2);
+    }
+    .tarif-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--c-accent);
+      color: #fff;
+      padding: .3rem 1.2rem;
+      border-radius: 50px;
+      font-family: var(--ff-display);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .tarif-icon {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .tarif-name {
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--c-grey);
+      margin-bottom: .8rem;
+    }
+    .tarif-price {
+      font-family: var(--ff-display);
+      font-weight: 900;
+      font-size: 3.5rem;
+      line-height: 1;
+      color: var(--c-white);
+    }
+    .tarif-card.featured .tarif-price { color: var(--c-accent); }
+    .tarif-unit {
+      font-size: .8rem;
+      color: var(--c-grey);
+      margin-bottom: 1.5rem;
+    }
+    .tarif-features {
+      text-align: left;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: .65rem;
+    }
+    .tarif-features li {
+      font-size: .88rem;
+      color: var(--c-grey-lt);
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+    }
+    .tarif-features li::before {
+      content: '✓';
+      color: var(--c-accent);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+    .tarif-btn { width: 100%; justify-content: center; }
+
+    /* ================================================================
+       LOCALISATION
+    ================================================================ */
+    #localisation {
+      padding-block: clamp(5rem, 9vw, 8rem);
+      background: var(--c-black);
+    }
+    .loc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+    .loc-text h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      line-height: 1.1;
+      margin-bottom: .8rem;
+    }
+    .loc-text h2 span { color: var(--c-accent); }
+    .loc-text p { color: var(--c-grey); font-size: .95rem; line-height: 1.85; }
+    .loc-details { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.1rem; }
+    .loc-row {
+      display: flex;
+      gap: .9rem;
+      align-items: flex-start;
+    }
+    .loc-row svg { color: var(--c-accent); flex-shrink: 0; margin-top: .1rem; }
+    .loc-row div { font-size: .9rem; color: var(--c-grey-lt); }
+    .loc-row div strong { display: block; color: var(--c-white); font-weight: 500; margin-bottom: .15rem; }
+    .horaires { width: 100%; border-collapse: collapse; font-size: .85rem; margin-top: .3rem; }
+    .horaires tr + tr td { border-top: 1px solid rgba(255,255,255,.05); }
+    .horaires td { padding: .3rem 0; color: var(--c-grey); padding-right: 1.5rem; }
+    .horaires td:last-child { text-align: right; color: var(--c-grey-lt); }
+    .map-placeholder {
+      aspect-ratio: 16/10;
+      background: var(--c-dark2);
+      border: 2px dashed rgba(255,92,0,.2);
+      border-radius: var(--radius-md);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      color: rgba(255,255,255,.2);
+      font-family: var(--ff-display);
+      font-size: .9rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+    .map-placeholder svg { opacity: .3; }
+    .map-placeholder code {
+      font-size: .72rem;
+      color: var(--c-accent);
+      opacity: .5;
+      font-family: monospace;
+      background: rgba(255,92,0,.06);
+      padding: .3rem .7rem;
+      border-radius: 4px;
+    }
+
+    /* ================================================================
+       CONTACT
+    ================================================================ */
+    #contact {
+      padding-block: clamp(5rem, 9vw, 8rem);
+      background: var(--c-dark);
+      position: relative;
+      overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--c-accent), transparent);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: start;
+    }
+    .contact-aside h2 {
+      font-family: var(--ff-display);
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .02em;
+      line-height: 1.1;
+      margin-bottom: .8rem;
+    }
+    .contact-aside h2 span { color: var(--c-accent); }
+    .contact-aside p { color: var(--c-grey); font-size: .95rem; line-height: 1.85; }
+    .contact-perks { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+    .contact-perk {
+      display: flex;
+      gap: .8rem;
+      align-items: flex-start;
+    }
+    .contact-perk-icon {
+      width: 38px; height: 38px;
+      flex-shrink: 0;
+      border-radius: var(--radius-sm);
+      background: rgba(255,92,0,.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-perk-icon svg { color: var(--c-accent); }
+    .contact-perk-text strong { display: block; font-size: .9rem; font-weight: 600; }
+    .contact-perk-text span  { font-size: .82rem; color: var(--c-grey); }
+
+    .contact-form-wrap {
+      background: var(--c-dark2);
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: var(--radius-lg);
+      padding: clamp(1.8rem, 4vw, 3rem);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      margin-bottom: 1.1rem;
+    }
+    .form-group label {
+      font-family: var(--ff-display);
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--c-grey);
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: .85rem 1rem;
+      background: var(--c-dark3);
+      border: 1.5px solid rgba(255,255,255,.08);
+      border-radius: var(--radius-sm);
+      color: var(--c-white);
+      font-size: .92rem;
+      outline: none;
+      transition: border-color var(--dur) var(--ease),
+                  box-shadow var(--dur) var(--ease);
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,.2); }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--c-accent);
+      box-shadow: 0 0 0 3px rgba(255,92,0,.12);
+    }
+    .form-group select option { background: var(--c-dark3); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-submit { width: 100%; justify-content: center; font-size: 1rem; padding: 1.1rem; }
+
+    /* ================================================================
+       FOOTER
+    ================================================================ */
+    #footer {
+      background: var(--c-black);
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding-block: 3.5rem 2rem;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr 1fr 1fr;
+      gap: clamp(2rem, 4vw, 3rem);
+      padding-bottom: 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .footer-brand .logo {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: .8rem;
+    }
+    .footer-brand .logo span { color: var(--c-accent); }
+    .footer-brand p { font-size: .88rem; color: var(--c-grey); line-height: 1.8; max-width: 28ch; }
+    .footer-social {
+      display: flex;
+      gap: .7rem;
+      margin-top: 1.5rem;
+    }
+    .footer-social a {
+      width: 38px; height: 38px;
+      border-radius: var(--radius-sm);
+      background: var(--c-dark2);
+      border: 1px solid rgba(255,255,255,.07);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--c-grey);
+      transition: background var(--dur) var(--ease),
+                  color var(--dur) var(--ease),
+                  box-shadow var(--dur) var(--ease);
+    }
+    .footer-social a:hover {
+      background: var(--c-accent);
+      border-color: var(--c-accent);
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(255,92,0,.4);
+    }
+    .footer-col h4 {
+      font-family: var(--ff-display);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: .6rem; }
+    .footer-col ul li a {
+      font-size: .88rem;
+      color: var(--c-grey);
+      transition: color var(--dur) var(--ease);
+    }
+    .footer-col ul li a:hover { color: var(--c-accent); }
+    .footer-col address { font-style: normal; font-size: .88rem; color: var(--c-grey); line-height: 1.9; }
+    .footer-bottom {
+      padding-top: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: .75rem;
+      font-size: .78rem;
+      color: rgba(255,255,255,.25);
+    }
+    .footer-bottom a:hover { color: var(--c-accent); }
+
+    /* ================================================================
+       RESPONSIVE
+    ================================================================ */
+    @media (max-width: 1024px) {
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .about-grid,
+      .loc-grid,
+      .contact-grid { grid-template-columns: 1fr; }
+      .about-cert { right: 1rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .ba-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2.8rem; }
+      .hero-actions { flex-direction: column; }
+      .hero-stats { gap: 1.5rem; }
+      .tarifs-grid { grid-template-columns: 1fr; }
+      .footer-bottom { text-align: center; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo" aria-label="Maxime Lebrun Coach – Accueil">
+        ML<span>.</span>COACH
+      </a>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about">Coach</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#temoignages">Avis</a></li>
+        <li><a href="#contact" class="nav-cta">Séance d'essai</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#about">Le coach</a>
+      <a href="#services">Services</a>
+      <a href="#avant-apres">Résultats</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#temoignages">Témoignages</a>
+      <a href="#contact">Prendre rendez-vous</a>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+  ============================================================ -->
+  <section id="hero" aria-labelledby="hero-h1">
+    <div class="hero-bg" id="heroBg" role="img" aria-label="Coach sportif en action à Vannes"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-stripe" aria-hidden="true"></div>
+    <div class="hero-noise"  aria-hidden="true"></div>
+
+    <div class="container hero-content">
+      <div class="hero-badge reveal">Coach Sportif Certifié · Vannes, Morbihan</div>
+
+      <!-- H1 SEO -->
+      <h1 id="hero-h1" class="hero-title reveal d1">
+        Transformez<br>
+        <span class="line2">votre corps</span>
+        <span class="line3">aujourd'hui</span>
+      </h1>
+
+      <p class="hero-sub reveal d2">
+        Coaching sportif à domicile à Vannes. Programmes sur mesure,
+        suivi personnalisé, résultats garantis. Commencez dès maintenant
+        avec une séance d'essai <strong style="color:#fff;">offerte</strong>.
+      </p>
+
+      <div class="hero-actions reveal d3">
+        <a href="#contact" class="btn btn-accent">
+          Réserver une séance
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <a href="#about" class="btn btn-outline">Découvrir mon approche</a>
+      </div>
+
+      <div class="hero-stats reveal d4">
+        <div class="hero-stat">
+          <strong>+200</strong>
+          <span>clients transformés</span>
+        </div>
+        <div class="hero-stat">
+          <strong>8 ans</strong>
+          <span>d'expérience</span>
+        </div>
+        <div class="hero-stat">
+          <strong>4,9★</strong>
+          <span>satisfaction client</span>
+        </div>
+        <div class="hero-stat">
+          <strong>100%</strong>
+          <span>à domicile</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-down" aria-hidden="true">
+      <div class="scroll-down-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ABOUT
+  ============================================================ -->
+  <section id="about" aria-labelledby="about-h2">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-img-wrap reveal-left">
+          <div class="about-img-frame" aria-hidden="true"></div>
+          <img
+            class="about-img"
+            src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&auto=format&fit=crop&q=80"
+            alt="Maxime Lebrun, coach sportif à domicile à Vannes Morbihan"
+            loading="lazy" width="640" height="853"
+          />
+          <div class="about-cert">
+            <strong>8+</strong>
+            <span>ans de<br>coaching</span>
+          </div>
+        </div>
+
+        <div class="about-text reveal-right">
+          <span class="section-tag">Votre coach</span>
+          <p class="about-name">Maxime <span>Lebrun</span></p>
+          <p class="about-title">Personal Trainer Certifié · Vannes</p>
+          <span class="accent-line" aria-hidden="true"></span>
+
+          <!-- H2 SEO -->
+          <h2 id="about-h2" class="section-title" style="font-size:clamp(1.8rem,3.5vw,2.8rem);">
+            Coach Sportif <span>à Domicile</span><br>à Vannes
+          </h2>
+
+          <p style="margin-top:1rem;">
+            Diplômé d'État en coaching sportif et certifié BPJEPS, je me déplace directement
+            chez vous à Vannes et dans tout le Morbihan. Ma méthode allie science de
+            l'entraînement et psychologie de la performance pour des résultats durables.
+          </p>
+          <p>
+            Après 8 ans passés à transformer des corps et des mentalités, j'ai développé
+            une approche unique : chaque programme est conçu sur mesure selon votre profil,
+            vos objectifs et votre emploi du temps. Aucune formule toute faite — uniquement
+            ce qui fonctionne <em>pour vous</em>.
+          </p>
+
+          <div class="about-tags">
+            <span class="tag">Perte de poids</span>
+            <span class="tag">Prise de masse</span>
+            <span class="tag">Rééducation</span>
+            <span class="tag">Nutrition</span>
+            <span class="tag">Remise en forme</span>
+            <span class="tag">HIIT</span>
+          </div>
+
+          <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+            <a href="#contact" class="btn btn-accent">
+              Séance d'essai gratuite
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="tel:+33612345678" class="btn btn-outline">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.15h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.6a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16z"/></svg>
+              06 12 34 56 78
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES
+  ============================================================ -->
+  <section id="services" aria-labelledby="services-h2">
+    <div class="container">
+      <div class="services-header reveal">
+        <span class="section-tag">Ce que je propose</span>
+        <!-- H2 SEO -->
+        <h2 id="services-h2" class="section-title">Mes <span>programmes</span><br>de coaching</h2>
+        <p class="section-lead">Chaque programme est entièrement personnalisé selon vos objectifs, votre niveau et votre emploi du temps.</p>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- Service 1 -->
+        <article class="service-card reveal" aria-labelledby="svc-poids">
+          <span class="service-num" aria-hidden="true">01</span>
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4v6a6 6 0 0 0 12 0V4"/><line x1="4" y1="2" x2="20" y2="2"/></svg>
+          </div>
+          <h3 id="svc-poids">Perte de poids</h3>
+          <p>Brûlez les graisses efficacement grâce à un protocole HIIT et nutrition adapté. Résultats visibles dès la 3e semaine.</p>
+        </article>
+
+        <!-- Service 2 -->
+        <article class="service-card reveal d1" aria-labelledby="svc-masse">
+          <span class="service-num" aria-hidden="true">02</span>
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <h3 id="svc-masse">Prise de masse</h3>
+          <p>Développez votre musculature avec des séances de force progressives et un suivi nutritionnel précis pour maximiser les gains.</p>
+        </article>
+
+        <!-- Service 3 -->
+        <article class="service-card reveal d2" aria-labelledby="svc-forme">
+          <span class="service-num" aria-hidden="true">03</span>
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+          </div>
+          <h3 id="svc-forme">Remise en forme</h3>
+          <p>Retrouvez énergie, souplesse et endurance. Programme doux mais efficace, idéal après une longue pause sportive.</p>
+        </article>
+
+        <!-- Service 4 -->
+        <article class="service-card reveal d3" aria-labelledby="svc-domicile">
+          <span class="service-num" aria-hidden="true">04</span>
+          <div class="service-icon-wrap" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 id="svc-domicile">Coaching à domicile</h3>
+          <p>Je me déplace chez vous à Vannes avec tout le matériel nécessaire. Pas de déplacement, pas de contrainte — 100% flexible.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       AVANT / APRÈS
+  ============================================================ -->
+  <section id="avant-apres" aria-labelledby="ba-h2">
+    <div class="container">
+      <div class="ba-header reveal">
+        <span class="section-tag">Transformations réelles</span>
+        <!-- H2 SEO -->
+        <h2 id="ba-h2" class="section-title">Avant <span>/</span> Après</h2>
+        <p class="section-lead">Faites glisser le curseur pour voir la transformation. Résultats obtenus en 12 semaines de coaching intensif à Vannes.</p>
+      </div>
+
+      <div class="ba-grid">
+
+        <!-- Slider 1 -->
+        <div class="ba-card reveal d1">
+          <div class="ba-slider-wrap" data-slider>
+            <img
+              class="ba-img-after"
+              src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&auto=format&fit=crop&q=80"
+              alt="Résultat après 12 semaines de coaching sportif à Vannes – transformation corporelle"
+              loading="lazy" width="600" height="750"
+            />
+            <img
+              class="ba-img-before"
+              src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=600&auto=format&fit=crop&q=80"
+              alt="Avant coaching sportif – point de départ de la transformation"
+              loading="lazy" width="600" height="750"
+            />
+            <div class="ba-divider" data-divider>
+              <div class="ba-handle">⇄</div>
+            </div>
+            <div class="ba-labels">
+              <span class="ba-label">Avant</span>
+              <span class="ba-label after">Après</span>
+            </div>
+          </div>
+          <div class="ba-info">
+            <h3>Thomas, 34 ans</h3>
+            <p>−14 kg en 12 semaines · Programme perte de poids à domicile</p>
+          </div>
+        </div>
+
+        <!-- Slider 2 -->
+        <div class="ba-card reveal d2">
+          <div class="ba-slider-wrap" data-slider>
+            <img
+              class="ba-img-after"
+              src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&auto=format&fit=crop&q=80"
+              alt="Après programme prise de masse avec coach sportif Vannes"
+              loading="lazy" width="600" height="750"
+            />
+            <img
+              class="ba-img-before"
+              src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c?w=600&auto=format&fit=crop&q=80"
+              alt="Avant programme musculation coaching à domicile Morbihan"
+              loading="lazy" width="600" height="750"
+            />
+            <div class="ba-divider" data-divider>
+              <div class="ba-handle">⇄</div>
+            </div>
+            <div class="ba-labels">
+              <span class="ba-label">Avant</span>
+              <span class="ba-label after">Après</span>
+            </div>
+          </div>
+          <div class="ba-info">
+            <h3>Laura, 28 ans</h3>
+            <p>+6 kg de muscle en 16 semaines · Programme prise de masse</p>
+          </div>
+        </div>
+
+        <!-- Slider 3 -->
+        <div class="ba-card reveal d3">
+          <div class="ba-slider-wrap" data-slider>
+            <img
+              class="ba-img-after"
+              src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=600&auto=format&fit=crop&q=80"
+              alt="Résultat remise en forme coaching Vannes Morbihan"
+              loading="lazy" width="600" height="750"
+            />
+            <img
+              class="ba-img-before"
+              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=600&auto=format&fit=crop&q=80"
+              alt="Avant remise en forme – coaching sportif à domicile Vannes"
+              loading="lazy" width="600" height="750"
+            />
+            <div class="ba-divider" data-divider>
+              <div class="ba-handle">⇄</div>
+            </div>
+            <div class="ba-labels">
+              <span class="ba-label">Avant</span>
+              <span class="ba-label after">Après</span>
+            </div>
+          </div>
+          <div class="ba-info">
+            <h3>Marc, 42 ans</h3>
+            <p>Remise en forme complète · Regain d'énergie et de mobilité</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TÉMOIGNAGES
+  ============================================================ -->
+  <section id="temoignages" aria-labelledby="testi-h2">
+    <div class="container">
+      <div class="testi-header reveal">
+        <span class="section-tag">Ce que disent mes clients</span>
+        <!-- H2 SEO -->
+        <h2 id="testi-h2" class="section-title">Témoignages <span>&amp;</span><br>avis clients</h2>
+      </div>
+
+      <div class="testi-grid">
+
+        <article class="testi-card reveal">
+          <span class="testi-result">−12 kg</span>
+          <div class="testi-quote" aria-hidden="true">"</div>
+          <p class="testi-text">Maxime a totalement changé ma relation au sport. En 3 mois de coaching à domicile à Vannes, j'ai perdu 12 kilos sans jamais me sentir épuisée. Sa pédagogie est exceptionnelle.</p>
+          <div class="testi-stars" aria-label="5 étoiles">★★★★★</div>
+          <div class="testi-author">
+            <img
+              class="testi-avatar"
+              src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=100&auto=format&fit=crop&q=80"
+              alt="Sophie Martin, cliente coach sportif Vannes"
+              loading="lazy" width="100" height="100"
+            />
+            <div class="testi-author-info">
+              <strong>Sophie Martin</strong>
+              <span>Vannes · Programme perte de poids</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card reveal d2">
+          <span class="testi-result">+8 kg muscle</span>
+          <div class="testi-quote" aria-hidden="true">"</div>
+          <p class="testi-text">Je cherchais un personal trainer à Vannes depuis longtemps. Maxime m'a aidé à prendre 8 kg de muscle en 4 mois. Ses programmes sont scientifiques et réellement efficaces.</p>
+          <div class="testi-stars" aria-label="5 étoiles">★★★★★</div>
+          <div class="testi-author">
+            <img
+              class="testi-avatar"
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&auto=format&fit=crop&q=80"
+              alt="Julien Dupont, client personal trainer Vannes"
+              loading="lazy" width="100" height="100"
+            />
+            <div class="testi-author-info">
+              <strong>Julien Dupont</strong>
+              <span>Vannes · Programme prise de masse</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card reveal d4">
+          <span class="testi-result">Remise en forme</span>
+          <div class="testi-quote" aria-hidden="true">"</div>
+          <p class="testi-text">À 47 ans, je pensais ne plus pouvoir retrouver la forme. Maxime a prouvé que j'avais tort. Le coaching à domicile a tout changé pour moi. Je recommande à 100%.</p>
+          <div class="testi-stars" aria-label="5 étoiles">★★★★★</div>
+          <div class="testi-author">
+            <img
+              class="testi-avatar"
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&auto=format&fit=crop&q=80"
+              alt="Pierre Bernard, client coach sportif à domicile Vannes"
+              loading="lazy" width="100" height="100"
+            />
+            <div class="testi-author-info">
+              <strong>Pierre Bernard</strong>
+              <span>Auray · Remise en forme</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CAROUSEL
+  ============================================================ -->
+  <section id="galerie" aria-labelledby="galerie-h2">
+    <div class="container carousel-header reveal">
+      <span class="section-tag">Séances &amp; lifestyle</span>
+      <h2 id="galerie-h2" class="section-title">En <span>action</span></h2>
+    </div>
+
+    <div class="carousel-track-wrap" aria-label="Galerie photos de séances de coaching sportif à Vannes">
+      <div class="carousel-track" role="list">
+        <!-- Set 1 -->
+        <div class="carousel-item" role="listitem">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&auto=format&fit=crop&q=75" alt="Séance de coaching sportif à domicile Vannes" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+        <div class="carousel-item" role="listitem">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&auto=format&fit=crop&q=75" alt="Entraînement fitness personal trainer Morbihan" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+        <div class="carousel-item" role="listitem">
+          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&auto=format&fit=crop&q=75" alt="Exercice musculation coaching à domicile Vannes" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+        <div class="carousel-item" role="listitem">
+          <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=400&auto=format&fit=crop&q=75" alt="Remise en forme coach sportif Vannes Bretagne" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+        <div class="carousel-item" role="listitem">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&auto=format&fit=crop&q=75" alt="Séance HIIT coaching à domicile Morbihan" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+        <div class="carousel-item" role="listitem">
+          <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=400&auto=format&fit=crop&q=75" alt="Entraînement crossfit personal trainer Vannes" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+        <!-- Duplicate for infinite loop -->
+        <div class="carousel-item" role="listitem" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&auto=format&fit=crop&q=75" alt="" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+        <div class="carousel-item" role="listitem" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&auto=format&fit=crop&q=75" alt="" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+        <div class="carousel-item" role="listitem" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&auto=format&fit=crop&q=75" alt="" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+        <div class="carousel-item" role="listitem" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=400&auto=format&fit=crop&q=75" alt="" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+        <div class="carousel-item" role="listitem" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&auto=format&fit=crop&q=75" alt="" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+        <div class="carousel-item" role="listitem" aria-hidden="true">
+          <img src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=400&auto=format&fit=crop&q=75" alt="" loading="lazy" width="400" height="533" />
+          <div class="carousel-item-overlay"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TARIFS
+  ============================================================ -->
+  <section id="tarifs" aria-labelledby="tarifs-h2">
+    <div class="container">
+      <div class="tarifs-header reveal">
+        <span class="section-tag">Investissez dans vous-même</span>
+        <!-- H2 SEO -->
+        <h2 id="tarifs-h2" class="section-title">Nos <span>tarifs</span></h2>
+        <p class="section-lead">Des formules adaptées à tous les budgets et tous les objectifs. Séance d'essai offerte sans engagement.</p>
+      </div>
+
+      <div class="tarifs-grid">
+
+        <!-- Tarif 1 -->
+        <div class="tarif-card reveal">
+          <div class="tarif-icon" aria-hidden="true">⚡</div>
+          <p class="tarif-name">Séance unique</p>
+          <p class="tarif-price">65<sup style="font-size:1.5rem;">€</sup></p>
+          <p class="tarif-unit">par séance · 1h</p>
+          <ul class="tarif-features" role="list">
+            <li>1 séance de 60 minutes</li>
+            <li>Déplacement à domicile inclus</li>
+            <li>Bilan initial offert</li>
+            <li>Programme séance personnalisé</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline tarif-btn">
+            Réserver
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Tarif 2 FEATURED -->
+        <div class="tarif-card featured reveal d2">
+          <div class="tarif-badge">🔥 Le plus populaire</div>
+          <div class="tarif-icon" aria-hidden="true">🏆</div>
+          <p class="tarif-name">Pack 10 séances</p>
+          <p class="tarif-price">550<sup style="font-size:1.5rem;">€</sup></p>
+          <p class="tarif-unit">soit 55€/séance · −15%</p>
+          <ul class="tarif-features" role="list">
+            <li>10 séances de 60 minutes</li>
+            <li>Déplacement à domicile inclus</li>
+            <li>Bilan & programme complet</li>
+            <li>Suivi nutrition offert</li>
+            <li>Accès au groupe privé WhatsApp</li>
+            <li>Valable 3 mois</li>
+          </ul>
+          <a href="#contact" class="btn btn-accent tarif-btn">
+            Commencer maintenant
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- Tarif 3 -->
+        <div class="tarif-card reveal d4">
+          <div class="tarif-icon" aria-hidden="true">♾️</div>
+          <p class="tarif-name">Abonnement mensuel</p>
+          <p class="tarif-price">199<sup style="font-size:1.5rem;">€</sup></p>
+          <p class="tarif-unit">par mois · 4 séances</p>
+          <ul class="tarif-features" role="list">
+            <li>4 séances de 60 min/mois</li>
+            <li>Déplacement à domicile inclus</li>
+            <li>Programme évolutif mensuel</li>
+            <li>Suivi nutrition complet</li>
+            <li>Disponibilité 7j/7 par message</li>
+            <li>Sans engagement</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline tarif-btn">
+            S'abonner
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LOCALISATION
+  ============================================================ -->
+  <section id="localisation" aria-labelledby="loc-h2">
+    <div class="container">
+      <div class="loc-grid">
+
+        <div class="reveal-left">
+          <span class="section-tag">Où je me déplace</span>
+          <h2 id="loc-h2" class="loc-text" style="font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;text-transform:uppercase;letter-spacing:.02em;line-height:1.1;margin-bottom:.8rem;">
+            <span style="color:var(--c-accent);">Vannes</span> &amp;<br>environs
+          </h2>
+          <p style="color:var(--c-grey);font-size:.95rem;line-height:1.85;">
+            Je me déplace à domicile à Vannes et dans un rayon de 20 km :
+            Auray, Arradon, Baden, Séné, Saint-Avé, Plescop et toutes les communes du Morbihan.
+            Aucun frais de déplacement supplémentaire dans la zone.
+          </p>
+
+          <div class="loc-details">
+            <div class="loc-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div><strong>Zone d'intervention</strong>Vannes et 20 km alentours · Morbihan (56)</div>
+            </div>
+            <div class="loc-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.15h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 8.6a16 16 0 0 0 6 6l.81-.81a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16z"/></svg>
+              <div><strong>Téléphone</strong>06 12 34 56 78</div>
+            </div>
+            <div class="loc-row">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              <div>
+                <strong>Disponibilités</strong>
+                <table class="horaires" aria-label="Horaires de coaching">
+                  <tbody>
+                    <tr><td>Lundi – Vendredi</td><td>7h00 – 21h00</td></tr>
+                    <tr><td>Samedi</td><td>8h00 – 18h00</td></tr>
+                    <tr><td>Dimanche</td><td>Sur demande</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Map placeholder -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40870.50789523287!2d-2.7896506751218335!3d47.65769427553919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48101e84c37de291%3A0xb9f358307b233d13!2sVannes!5e1!3m2!1sfr!2sfr!4v1773841218503!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT / FORMULAIRE
+  ============================================================ -->
+  <section id="contact" aria-labelledby="contact-h2">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="reveal-left">
+          <span class="section-tag">Passez à l'action</span>
+          <h2 id="contact-h2" style="font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;text-transform:uppercase;line-height:1.05;margin-bottom:.8rem;">
+            Votre <span style="color:var(--c-accent);">séance d'essai</span><br>vous attend
+          </h2>
+          <p style="color:var(--c-grey);font-size:.95rem;line-height:1.85;">
+            Remplissez le formulaire et je vous recontacte sous 24h pour organiser
+            votre première séance gratuite à Vannes. Sans engagement, sans pression.
+          </p>
+
+          <div class="contact-perks">
+            <div class="contact-perk">
+              <div class="contact-perk-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="contact-perk-text">
+                <strong>Séance d'essai offerte</strong>
+                <span>60 minutes de coaching sans frais</span>
+              </div>
+            </div>
+            <div class="contact-perk">
+              <div class="contact-perk-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="contact-perk-text">
+                <strong>Réponse sous 24h</strong>
+                <span>Je reviens vers vous rapidement</span>
+              </div>
+            </div>
+            <div class="contact-perk">
+              <div class="contact-perk-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+              </div>
+              <div class="contact-perk-text">
+                <strong>100% à domicile</strong>
+                <span>Je viens chez vous à Vannes</span>
+              </div>
+            </div>
+            <div class="contact-perk">
+              <div class="contact-perk-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div class="contact-perk-text">
+                <strong>Sans engagement</strong>
+                <span>Aucun contrat forcé</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <!--
+            Formulaire Freeform
+            Remplacez "INSERER_LIEN_FREEFORM_ICI" par votre URL Freeform.
+          -->
+          <form
+            class="contact-form-wrap"
+            action="https://formspree.io/f/xojkydwz"
+            method="POST"
+            novalidate
+            aria-label="Formulaire de prise de rendez-vous coach sportif Vannes"
+          >
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="jean@mail.fr" required autocomplete="email" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="06 XX XX XX XX" autocomplete="tel" />
+              </div>
+              <div class="form-group">
+                <label for="objectif">Votre objectif</label>
+                <select id="objectif" name="objectif">
+                  <option value="" disabled selected>Choisissez</option>
+                  <option value="perte-poids">Perte de poids</option>
+                  <option value="prise-masse">Prise de masse</option>
+                  <option value="remise-forme">Remise en forme</option>
+                  <option value="performance">Performance sportive</option>
+                  <option value="autre">Autre objectif</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message / disponibilités</label>
+              <textarea id="message" name="message" placeholder="Parlez-moi de vous, de votre niveau actuel et de vos disponibilités…"></textarea>
+            </div>
+
+            <!-- Honeypot anti-spam -->
+            <input type="text" name="_honey" style="display:none" tabindex="-1" aria-hidden="true" />
+
+            <button type="submit" class="btn btn-accent form-submit">
+              🔥 Réserver ma séance d'essai gratuite
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </button>
+
+            <p style="text-align:center;margin-top:.9rem;font-size:.78rem;color:rgba(255,255,255,.3);">
+              Réponse garantie sous 24h · Sans engagement
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer id="footer" role="contentinfo" aria-label="Pied de page Maxime Lebrun Coach Sportif Vannes">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <p class="logo">ML<span>.</span>COACH</p>
+          <p>Ce site est un projet fictif réalisé dans le cadre de mon portfolio.Les informations, services et contenus présentés ne correspondent pas à une entreprise réelle. Les images utilisées sont issues de banques d’images libres de droits et sont utilisées uniquement à des fins de démonstration.</p>
+          <div class="footer-social" aria-label="Réseaux sociaux">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg>
+            </a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.4a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav aria-label="Liens rapides">
+          <h4>Navigation</h4>
+          <ul role="list">
+            <li><a href="#about">Le coach</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#avant-apres">Transformations</a></li>
+            <li><a href="#tarifs">Tarifs</a></li>
+            <li><a href="#temoignages">Témoignages</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Services footer">
+          <h4>Services</h4>
+          <ul role="list">
+            <li><a href="#services">Perte de poids</a></li>
+            <li><a href="#services">Prise de masse</a></li>
+            <li><a href="#services">Remise en forme</a></li>
+            <li><a href="#services">Coaching domicile</a></li>
+            <li><a href="#services">Suivi nutrition</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h4>Contact</h4>
+          <address>
+            <strong style="color:#fff;display:block;margin-bottom:.5rem;">Maxime Lebrun</strong>
+            Coach Sportif Certifié<br />
+            Vannes, 56000<br />
+            Morbihan, Bretagne<br /><br />
+            <a href="tel:+33612345678" style="transition:color .3s;">06 12 34 56 78</a><br />
+            <a href="mailto:contact@maxime-lebrun-coach.fr" style="transition:color .3s;font-size:.82rem;">contact@maxime-lebrun-coach.fr</a>
+          </address>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 Maxime Lebrun – Coach Sportif à Domicile Vannes · Morbihan</p>
+        <p>
+          <a href="#">Mentions légales</a>
+          &nbsp;·&nbsp;
+          <a href="#">CGU</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    /* ── 1. Navbar scroll ── */
+    const navbar = document.getElementById('navbar');
+    function updateNav() {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    /* ── 2. Hamburger ── */
+    const hamburger  = document.getElementById('hamburger');
+    const mobileNav  = document.getElementById('mobileNav');
+    hamburger.addEventListener('click', () => {
+      const open = mobileNav.classList.toggle('open');
+      hamburger.classList.toggle('active', open);
+      hamburger.setAttribute('aria-expanded', String(open));
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    /* ── 3. Scroll reveal ── */
+    const allReveal = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+    const ro = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          ro.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    allReveal.forEach(el => ro.observe(el));
+
+    /* Trigger hero immediately */
+    document.querySelectorAll('#hero .reveal').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 200 + i * 120);
+    });
+
+    /* ── 4. Parallax hero ── */
+    const heroBg = document.getElementById('heroBg');
+    function parallax() {
+      if (window.innerWidth > 768) {
+        heroBg.style.transform = `translateY(${window.scrollY * 0.28}px)`;
+      }
+    }
+    window.addEventListener('scroll', parallax, { passive: true });
+
+    /* ── 5. Before/After Sliders ── */
+    document.querySelectorAll('[data-slider]').forEach(slider => {
+      const divider  = slider.querySelector('[data-divider]');
+      const imgBefore = slider.querySelector('.ba-img-before');
+      let dragging = false;
+
+      function setPos(x) {
+        const rect  = slider.getBoundingClientRect();
+        let pct = ((x - rect.left) / rect.width) * 100;
+        pct = Math.max(5, Math.min(95, pct));
+        divider.style.left = pct + '%';
+        imgBefore.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      }
+
+      // Mouse
+      divider.addEventListener('mousedown', e => { dragging = true; e.preventDefault(); });
+      window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+      window.addEventListener('mouseup',   () => { dragging = false; });
+
+      // Touch
+      divider.addEventListener('touchstart', e => { dragging = true; e.preventDefault(); }, { passive: false });
+      window.addEventListener('touchmove',   e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
+      window.addEventListener('touchend',    () => { dragging = false; });
+
+      // Init at 50%
+      imgBefore.style.clipPath = 'inset(0 50% 0 0)';
+    });
+
+    /* ── 6. Active nav highlight ── */
+    const sections = document.querySelectorAll('section[id]');
+    const navAs    = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+    const so = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navAs.forEach(a => {
+            a.style.color = '';
+            if (a.getAttribute('href') === '#' + e.target.id) a.style.color = 'var(--c-accent)';
+          });
+        }
+      });
+    }, { threshold: 0.45 });
+    sections.forEach(s => so.observe(s));
+  </script>
+
+</body>
+</html>
